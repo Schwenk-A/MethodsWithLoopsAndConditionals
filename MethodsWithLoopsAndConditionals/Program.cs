@@ -34,8 +34,9 @@ namespace MethodsWithLoopsAndConditionals
 
         public static void EqualOrNot()
         {
-            Console.WriteLine("Please enter a number to see if it is even or not.");
+            Console.WriteLine("I can also tell you if two numbers are equal or not... please provide the first number");
             var inputOne = int.Parse(Console.ReadLine());
+            Console.WriteLine("interesting pick....provide another number.... let's find out is it the same or not?");
             var inputTwo = int.Parse(Console.ReadLine());
 
             if (inputOne == inputTwo)
@@ -66,6 +67,7 @@ namespace MethodsWithLoopsAndConditionals
         public static void EvenOrOdd ()
 
         {
+            Console.WriteLine("Please add another number- i shall be mystical and tell you if its even..or....odd!!");
             var userNumber = int.Parse(Console.ReadLine());
             if (userNumber % 2 == 0)
             {
@@ -76,6 +78,5 @@ namespace MethodsWithLoopsAndConditionals
                 Console.WriteLine("ooooddddd");
             }
         }
-
     }
 }
