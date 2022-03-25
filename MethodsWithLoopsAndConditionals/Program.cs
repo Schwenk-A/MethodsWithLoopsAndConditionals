@@ -6,39 +6,68 @@ namespace MethodsWithLoopsAndConditionals
     {
         static void Main(string[] args)
         {
-
-            PosORNeg();
-            LegalAge();
-            EqualOrNot();
-            MultipleThrees();
-            UpToOneHundred();
+            Console.WriteLine("Hello, I am your magic number box. I am pretty cool and like to show off");
+           PosOrNeg();
+           Console.WriteLine("Let us see if you are even old enough to vote.");
+           LegalAge();
+           EqualOrNot(50,6);
             EvenOrOdd();
-        }
+            IntRange(5);
+            Console.WriteLine("Look how high i can count! Press anything to see");
+          Console.ReadKey();
+           UpToOneHundred();
+           Console.WriteLine("I can do it by three's too! Press anything to see");
+            Console.ReadKey();
+            MultipleThrees();
 
-        public static void PosORNeg()
+        }
+        //#region name it
+        
+        public static void PosOrNeg() 
         {
-            Console.WriteLine("Please enter a number");
-            var usersInput = int.Parse(Console.ReadLine());
-            var result = (usersInput >= 0) ? "that's positive bro" : "that's so negative";
+            
+            bool isNumber;
+            int answer; 
+            do
+            {
+                Console.WriteLine("Please enter a number, lets see if you are a positive or negative person.");
+                isNumber = int.TryParse(Console.ReadLine(),out answer);
+
+            } while (isNumber == false);
+
+            var result = (answer >= 0) ? "that's positive bro" : "that's so negative";
             Console.WriteLine(result);
+            Console.WriteLine("Do you wish to continue? Press any key");
+            Console.ReadKey();
+            Console.Clear();
+            
 
         }
         public static void LegalAge()
         {
-            Console.WriteLine("Please enter your age.");
-            int userAge = int.Parse(Console.ReadLine());
-            var result = (userAge >= 21) ? "you are old enough" : "you are not old enough";
+            bool ageInput;
+            int answer;
+            do
+            {
+                Console.WriteLine("Please enter your age.");
+                ageInput = int.TryParse(Console.ReadLine(), out answer);
+
+            } while (ageInput==false);
+
+            var result = (answer >= 21) ? "you are old enough...choose wisely" : "you are not old enough...soooo bye";
             Console.WriteLine(result);
+            Console.WriteLine("Do you wish to continue?Press any key...");
+            Console.ReadKey();
+            Console.Clear();
         }
 
 
-        public static void EqualOrNot()
+        public static void EqualOrNot(int inputOne, int inputTwo)
         {
-            Console.WriteLine("I can also tell you if two numbers are equal or not... please provide the first number");
-            var inputOne = int.Parse(Console.ReadLine());
-            Console.WriteLine("interesting pick....provide another number.... let's find out is it the same or not?");
-            var inputTwo = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("I will choose my own two numbers and just tell you if they are the same or not.. for fun");
+            Console.WriteLine("if you are please press any key to continue.");
+            Console.ReadKey();
             if (inputOne == inputTwo)
             {
                 Console.WriteLine("thats the same!");
@@ -47,7 +76,9 @@ namespace MethodsWithLoopsAndConditionals
             {
                 Console.WriteLine("those...totally aren't the same"); 
             }
-            
+            Console.WriteLine("Would you like to continue? Press any key");
+            Console.ReadKey();
+            Console.Clear();
         }
         public static void MultipleThrees()
         {
@@ -55,6 +86,9 @@ namespace MethodsWithLoopsAndConditionals
             {
                 Console.WriteLine(threeNum);
             }
+            Console.WriteLine("Would you like to continue? Press any key");
+            Console.ReadKey();
+            Console.Clear();
         }
         public static void UpToOneHundred()
         {
@@ -62,12 +96,15 @@ namespace MethodsWithLoopsAndConditionals
             {
                 Console.WriteLine(num);
             }
-
+            Console.WriteLine("Would you like to continue? Press any key");
+            Console.ReadKey();
+            Console.Clear();
         }
+
         public static void EvenOrOdd ()
 
         {
-            Console.WriteLine("Please add another number- i shall be mystical and tell you if its even..or....odd!!");
+            Console.WriteLine("i shall be mystical and tell your if its even..or....odd!!");
             var userNumber = int.Parse(Console.ReadLine());
             if (userNumber % 2 == 0)
             {
@@ -76,6 +113,24 @@ namespace MethodsWithLoopsAndConditionals
             else
             {
                 Console.WriteLine("ooooddddd");
+            }
+            Console.WriteLine("Would you like to continue? Press any key");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        //Heating up section 
+
+        public static void IntRange(int numberone)
+        {
+
+            if(numberone>= -10 && numberone<= 10)
+            {
+                Console.WriteLine("Your number is within range.");
+
+            }
+            else
+            {
+                Console.WriteLine("your numbers out of bounds buddy.");
             }
         }
     }
